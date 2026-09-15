@@ -16,15 +16,32 @@ const submit = async function( event ) {
     modify: document.querySelector('#modify').value}
   const body = JSON.stringify( json )
 
+  let type = '/add'
+  if (document.querySelector('#delete').value) {
+    type = '/remove'
+  }
+  if (document.querySelector('#modify').value) {
+    type = '/update'
+  }
 
-  const response = await fetch( '/submit', {
+  fetch( type, {
     method:  'POST',
     headers: { 'Content-Type': 'application/json' },
     body:    JSON.stringify( json )
   })
 
+  const response = await fetch( '/docs', {
+    method:  'GET',
+    headers: { 'Content-Type': 'application/json' },
+  })
+
   let arr = await response.text()
+
+  console.log(arr)
+  
   arr = JSON.parse(arr)
+
+  console.log(arr)
 
   ul.innerHTML = ''
   for (let item of arr) {

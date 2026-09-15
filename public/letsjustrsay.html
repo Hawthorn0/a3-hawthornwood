@@ -3,7 +3,7 @@
   <head>
     <title>CS4241 Assignment 2</title>
     <meta charset='utf-8'>
-    <script src='js/start.js'></script>
+    <script src='js/main.js'></script>
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic"> -->
     <link rel='stylesheet' href='css/main.css'>
     
@@ -16,11 +16,14 @@
     </header>
     <main>
       <div class="center">
-        <h1>Sign In? (using an unused username will create a new user)</h1>
+        <h1>Les shopping list</h1>
       <div id="forma">
         <form>
-          <p>Username<input type='text' id='user' placeholder='Username'></p>
-          <p>Password<input type='text' id='pass' placeholder='Password'></p>
+          <input type='text' id='itemname' placeholder='whatcha want'>
+          <input type='text' id='itemprice' placeholder='how much was it?'>
+          <input type='text' id='itemgood' placeholder='tasty or nah?'>
+          <p>Remove Data?<input type='text' id='delete' placeholder='Type name of entry to delete'></p>
+          <p>Modify Data?<input type='text' id='modify' placeholder='Type name of entry to modify'></p>
           <button>submit</button>
         </form>
       </div>
